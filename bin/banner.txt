@@ -1,0 +1,13 @@
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&oooooooooooooooooooooooooooooooooooooooooo
+&&&&8       #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&    &&&&&&&&&&&&&&&&&&oo     ooooooo     oooo          oooooooo
+&&8            &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&    &&&&&&&&&&&&&&&&&&&o     ooooooo     oooo             ooooo
+&     &&&&&     &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&8888&&&&&&&&&&&&&&&&&&oo     ooooooo     oooo    8ooo       ooo
+&     &&&&&&&&&&&&&&&&       8&&&&&&&&8       &&&&&&    &&&&&&        8&&&&&     ooooooo     oooo    8ooooo#     oo
+&         8&&&&&&&&&           #&&&&            &&&&    &&&&            &&&&     ooooooo     oooo    8oooooo     &o
+&&&            &&&&     &&&&    #&&     8&&&&    &&&    &&&&8  8&&&&     &&o     ooooooo     oooo    8oooooo      o
+&&&&&&          &&&     &&&&     &&     &&&&&&&&&&&&    &&&&&&&          &&&     ooooooo     oooo    8oooooo     8o
+&&&&&&&&&&&      &8     &&&&     &&     &&&&&&&&&&&&    &&&&      &&     &&o     ooooooo     oooo    8oooooo     oo
+     &&&&&&&     &&     &&&&     &&     &&&&&    &&&    &&&     &&&&     &&o     ooooooo     oooo    8ooooo     ooo
+&               &&&&    #&&     &&&&            &&&&    &&&     &&&      &&&     ooooooo     oooo              oooo
+&&&           &&&&&&&         #&&&&&&8         &&&&&    &&&&       88    &&o     ooooooo     oooo            oooooo
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&oooooooooooooooooooooooooooooooooooooooo

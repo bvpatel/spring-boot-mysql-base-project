@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" debug="false">
+	<!-- Enable JMX -->
+	<jmxConfigurator />
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%date{ISO8601}] - [%level] - [%thread] - [%X{clientIP}] - %logger{50} - %message%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+	</appender>
+
+	<appender name="application"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/var/log/socialid/application.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>/var/log/socialid/application.%d{yyyy-MM-dd}.%i.log.gz
+			</FileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>500MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%date{ISO8601}] - [%level] - [%thread] - [%X{clientIP}] - %logger{50} - %message%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="database-queries"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/var/log/socialid/database-queries.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>/var/log/socialid/database-queries.%d{yyyy-MM-dd}.%i.log.gz
+			</FileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>500MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%date{ISO8601}] - [%level] - [%thread] - [%X{clientIP}] - %logger{50} - %message%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="api-requests"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/var/log/socialid/api-req.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>/var/log/socialid/api-req.%d{yyyy-MM-dd}.%i.log.gz
+			</FileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>500MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%date{ISO8601}] - [%level] - [%thread] - [%X{clientIP}] - %logger{50} - %message%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<!-- <appender name="elk" class="net.logstash.logback.appender.LogstashTcpSocketAppender"> -->
+	<!-- <destination>internal-olamoney-logstash-test-2026146610.ap-southeast-1.elb.amazonaws.com:5001</destination> -->
+
+	<!-- <encoder class="net.logstash.logback.encoder.LogstashEncoder" /> -->
+
+	<!-- <customFields>{"appname":"BPD_STAGING"}</customFields> -->
+
+	<!-- <filter class="ch.qos.logback.core.filter.EvaluatorFilter"> -->
+	<!-- <evaluator> -->
+	<!-- <expression> -->
+	<!-- if(level == ERROR) -->
+	<!-- return true; -->
+
+	<!-- if(logger.contains("BookingResource") == Boolean.FALSE &amp;&amp; logger.contains("BillerCalculator") 
+		== Boolean.FALSE &amp;&amp; logger.contains("OfferEngine") == Boolean.FALSE) -->
+	<!-- return false; -->
+
+	<!-- if(marker != null &amp;&amp; marker.getName().equals("ELK_MARKER_IGNORE")) -->
+	<!-- return false; -->
+
+	<!-- return true; -->
+	<!-- </expression> -->
+	<!-- </evaluator> -->
+	<!-- <OnMismatch>DENY</OnMismatch> -->
+	<!-- <OnMatch>NEUTRAL</OnMatch> -->
+	<!-- </filter> -->
+	<!-- </appender> -->
+
+
+	<root level="INFO">
+		<level value="INFO" />
+		<appender-ref ref="application" />
+		<appender-ref ref="STDOUT" />
+	</root>
+	
+    <logger name="me.socialid.contactManagement.app.interceptor.RequestStatisticsInterceptor" level="INFO">
+		<appender-ref ref="api-requests" />
+	</logger>
+	
+	<logger name="org.springframework" level="WARN" />
+
+	<logger name="org.hibernate" level="WARN" />
+
+	<logger name="org.hibernate.SQL" level="DEBUG" >
+		<appender-ref ref="database-queries" />
+	</logger>
+
+	<logger
+		name="org.springframework.aop.interceptor.PerformanceMonitorInterceptor"
+		level="TRACE" />
+</configuration>
