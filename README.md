@@ -37,5 +37,5 @@ Getting started
    ```
 3. Run project and Enjoy!
    ```sh
-    mvn spring-boot:run
+   mvn spring-boot:run
    ```
